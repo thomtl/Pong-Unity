@@ -17,16 +17,19 @@ public class Player : MonoBehaviour {
     public void ResetPlayerPos()
     {
         rb.MovePosition(new Vector3(transform.position.x, 0f, 0f));
+        rb.velocity = Vector2.zero;
     }
     private void FixedUpdate()
     {
         if (Input.GetKey(up))
         {
             rb.MovePosition(transform.position + new Vector3(0f, yMovement));
+            rb.velocity = Vector2.zero;
         }
         if (Input.GetKey(down))
         {
             rb.MovePosition(transform.position + new Vector3(0f, -yMovement));
+            rb.velocity = Vector2.zero;
         }
     }
 
